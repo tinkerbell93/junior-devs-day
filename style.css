@@ -1,0 +1,155 @@
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  margin: 0;
+  background-color: ivory;
+  overflow-x: hidden;
+}
+div,
+section,
+header,
+footer,
+p,
+h1,
+h2 {
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+a {
+  color: royalblue;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.global-width {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.scroll-graphic {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.graphic-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.visible {
+  opacity: 1;
+}
+.graphic-item img {
+  max-height: 100vh;
+}
+.scroll-text {
+  position: relative;
+  overflow: hidden;
+}
+.scroll-text span,
+.normal-content span {
+  text-decoration: line-through;
+}
+.step {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-top: 1px;
+  margin-bottom: 60vh;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+.tree {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/03.png) center no-repeat;
+  background-size: contain;
+}
+[data-action='dog'] .motion {
+  position: absolute;
+  top: -15%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  background: url(./images/02-01.PNG) no-repeat center;
+  opacity: 0;
+  background-size: 3rem;
+}
+.dog {
+  position: absolute;
+  top: 55%;
+  right: 50%;
+  width: 150px;
+  transition: all 1s 0.2s linear;
+}
+[data-action='morning'] .motion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  background: url('./images/06-00.PNG') 30vw 29vh / 5% no-repeat;
+  animation: ani-step 0.5s linear alternate infinite;
+}
+[data-action='night'] .motion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  background: url('./images/06-01.PNG') 30vw 29vh / 6% no-repeat;
+  animation: ani-step 0.5s linear alternate infinite;
+}
+[data-action='yoga'] .motion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  background: url('./images/08-00.PNG') 35vw 34vh / 5% no-repeat;
+  animation: ani-step 0.5s linear alternate infinite;
+}
+footer {
+  padding: 3rem;
+  text-align: center;
+}
+footer a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+}
+@keyframes ani-step {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ani-step02 {
+  0% {
+    background-image: url(./images/06-00.PNG);
+  }
+  100% {
+    background-image: url(./images/06-01.PNG);
+  }
+}
