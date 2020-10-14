@@ -87,7 +87,7 @@ h1 {
   left: 5%;
   width: 100%;
   height: 100%;
-  background: url(./images/02-01.PNG) no-repeat center;
+  background: url(./images/02-01.png) no-repeat center;
   opacity: 0;
   background-size: 3rem;
 }
@@ -105,7 +105,7 @@ h1 {
   width: 100%;
   height: 100vh;
   opacity: 0;
-  background: url('./images/06-00.PNG') 30vw 29vh / 5% no-repeat;
+  background: url('./images/06-00.png') 30vw 29vh / 5% no-repeat;
   animation: ani-step 0.5s linear alternate infinite;
 }
 [data-action='night'] .motion {
