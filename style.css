@@ -23,15 +23,29 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 h1 {
   text-align: center;
 }
-
+header {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 30px;
+}
+header p {
+  max-width: 70vw;
+  margin: 0 auto;
+}
 .global-width {
   max-width: 620px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+.scroll-motion {
+  height: 20vh;
+  text-align: center;
 }
 .scroll-graphic {
   position: sticky;
@@ -83,13 +97,11 @@ h1 {
 }
 [data-action='dog'] .motion {
   position: absolute;
-  top: -15%;
-  left: 5%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url(./images/02-01.png) no-repeat center;
-  opacity: 0;
-  background-size: 3rem;
+  background: url(./images/02-01.png) no-repeat 53vw 30vh / 3vw;
 }
 .dog {
   position: absolute;
@@ -98,34 +110,38 @@ h1 {
   width: 150px;
   transition: all 1s 0.2s linear;
 }
-[data-action='morning'] .motion {
+[data-action='study'] .motion {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  opacity: 0;
-  background: url('./images/06-00.png') 30vw 29vh / 5% no-repeat;
-  animation: ani-step 0.5s linear alternate infinite;
 }
-[data-action='night'] .motion {
+[data-action='study'] .motion span {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh;
-  opacity: 0;
-  background: url('./images/06-01.png') 30vw 29vh / 6% no-repeat;
+  height: 100%;
+  background: 30vw 29vh no-repeat;
+}
+[data-action='study'] .motion .motion-00 {
+  background-image: url(./images/06-00.png);
+  background-size: 5vw;
   animation: ani-step 0.5s linear alternate infinite;
 }
+[data-action='study'] .motion .motion-01 {
+  background-image: url(./images/06-01.png);
+  background-size: 6vw;
+  animation: ani-step 0.5s 0.5s linear alternate infinite;
+}
+
 [data-action='yoga'] .motion {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  opacity: 0;
-  background: url('./images/08-00.png') 35vw 34vh / 5% no-repeat;
+  visibility: hidden;
+  background: url('./images/08-00.png') 33vw 34vh / 5% no-repeat;
   animation: ani-step 0.5s linear alternate infinite;
 }
 footer {
@@ -137,12 +153,17 @@ footer a {
   text-decoration: none;
   color: #333;
 }
+
+/* 애니메이션 */
 @keyframes ani-step {
   from {
-    opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
   }
   to {
-    opacity: 1;
+    visibility: visible;
   }
 }
 @keyframes ani-step02 {
@@ -151,5 +172,37 @@ footer a {
   }
   100% {
     background-image: url(./images/06-01.png);
+  }
+}
+
+/* 반응형 */
+/* 테블릿 (해상도 768px ~ 1024px)*/
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  [data-action='dog'] .motion {
+    background: url(./images/02-01.png) no-repeat 53vw 40vh / 3vw;
+  }
+  [data-action='study'] .motion span {
+    background: 25vw 40vh no-repeat;
+  }
+  [data-action='yoga'] .motion {
+    background-position: 30vw 45vh;
+    background-size: 5%;
+  }
+}
+
+/* 모바일 (해상도 375px ~ 767px)*/
+@media all and (min-width: 375px) and (max-width: 767px) {
+  [data-action='dog'] .motion {
+    background: url(./images/02-01.png) no-repeat 53vw 44vh / 4vw;
+  }
+  .dog {
+    width: 50px;
+  }
+  [data-action='study'] .motion span {
+    background: 25vw 43vh no-repeat;
+  }
+  [data-action='yoga'] .motion {
+    background-position: 30vw 46vh;
+    background-size: 6%;
   }
 }

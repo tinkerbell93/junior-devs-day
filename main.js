@@ -13,8 +13,7 @@
           'none';
       }
     },
-    morning(type) {},
-    night(type) {},
+    study(type) {},
     yoga(type) {},
   };
 
