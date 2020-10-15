@@ -21,8 +21,22 @@
   const stepElems = document.querySelectorAll('.step');
   let curGraphic = graphicElems[0];
   let ioIndex;
+
+  const progressBar = document.querySelector('.progress-bar');
+
   const scrollBtn = document.querySelector('.scroll-btn button');
 
+  // 프로그레스 바
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const documentHight = document.body.offsetHeight;
+    const windowHight = window.outerHeight;
+    const per = Math.ceil((scrollTop / (documentHight - windowHight)) * 100);
+
+    progressBar.style.width = `${per}%`;
+  });
+
+  // 스크롤 버튼
   scrollBtn.addEventListener('click', () => {
     scrollTo({
       top: innerHeight,

@@ -43,6 +43,8 @@ header p {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* 스크롤 버튼 */
 .scroll-btn {
   margin: 0 auto;
   height: 20vh;
@@ -54,6 +56,7 @@ header p {
   height: 35px;
   width: 22px;
   border-radius: 10px;
+  background-color: transparent;
   border: 2px solid #333;
 }
 .mouse-in {
@@ -65,6 +68,21 @@ header p {
   animation: mouse-in 1s infinite;
 }
 
+/* 프로그레스 바 */
+.progress {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 5;
+}
+.progress-bar {
+  display: block;
+  background-image: linear-gradient(90deg, #f79c92, #fa7465);
+  height: 100%;
+}
+
+/* 스크롤 콘텐츠 */
 .scroll-graphic {
   position: sticky;
   top: 0;
