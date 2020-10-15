@@ -5,6 +5,7 @@ body {
   margin: 0;
   background-color: ivory;
   overflow-x: hidden;
+  color: #333;
 }
 div,
 section,
@@ -17,7 +18,7 @@ h2 {
   word-break: keep-all;
 }
 a {
-  color: royalblue;
+  color: inherit;
 }
 img {
   max-width: 100%;
@@ -216,31 +217,31 @@ header p {
   background: url(./images/04-00.png) no-repeat center;
 }
 
-[data-action='study'] .motion {
+.study .motion {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
 }
-[data-action='study'] .motion span {
+.study .motion span {
   position: absolute;
   width: 100%;
   height: 100%;
   background: 30vw 29vh no-repeat;
 }
-[data-action='study'] .motion .motion-00 {
+.study .motion .motion-00 {
   background-image: url(./images/06-00.png);
   background-size: 5vw;
   animation: ani-step 0.5s linear alternate infinite;
 }
-[data-action='study'] .motion .motion-01 {
+.study .motion .motion-01 {
   background-image: url(./images/06-01.png);
   background-size: 6vw;
   animation: ani-step 0.5s 0.5s linear alternate infinite;
 }
 
-[data-action='yoga'] .motion {
+.yoga .motion {
   position: absolute;
   top: 0;
   left: 0;
@@ -319,12 +320,46 @@ footer a {
   [data-action='dog'] .motion {
     background: url(./images/02-01.png) no-repeat 53vw 40vh / 3vw;
   }
-  [data-action='study'] .motion span {
+  .icons div {
+    background-size: 7vw;
+  }
+  .icons .icon-00 {
+    top: 0%;
+    left: -30%;
+  }
+  .icons .icon-01 {
+    top: -5%;
+    left: -22%;
+  }
+  .icons .icon-02 {
+    background-size: 3vw;
+    top: -10%;
+    left: -15%;
+    background-size: 5vw;
+  }
+  .icons .icon-03 {
+    background-size: 4vw;
+    top: -10%;
+    left: 15%;
+    background-size: 5vw;
+  }
+  .icons .icon-04 {
+    top: -5%;
+    left: 22%;
+  }
+  .icons .icon-05 {
+    top: 0%;
+    left: 30%;
+  }
+  .study .motion span {
     background: 25vw 40vh no-repeat;
   }
-  [data-action='yoga'] .motion {
+  .yoga .motion {
     background-position: 30vw 45vh;
     background-size: 5%;
+  }
+  .dream {
+    background-position: 10vw 25vh;
   }
 }
 
@@ -336,11 +371,52 @@ footer a {
   .dog {
     width: 50px;
   }
-  [data-action='study'] .motion span {
+  .study .motion span {
     background: 25vw 43vh no-repeat;
   }
-  [data-action='yoga'] .motion {
+  .icons div {
+    background-size: 8vw;
+  }
+  .icons .icon-00 {
+    top: 0%;
+    left: -30%;
+  }
+  .icons .icon-01 {
+    top: -3%;
+    left: -22%;
+  }
+  .icons .icon-02 {
+    background-size: 3vw;
+    top: -5%;
+    left: -15%;
+    background-size: 6vw;
+  }
+  .icons .icon-03 {
+    background-size: 4vw;
+    top: -5%;
+    left: 15%;
+    background-size: 6vw;
+  }
+  .icons .icon-04 {
+    top: -3%;
+    left: 22%;
+  }
+  .icons .icon-05 {
+    top: 0%;
+    left: 30%;
+  }
+
+  .steam {
+    background-size: 30vw;
+  }
+
+  .yoga .motion {
     background-position: 30vw 46vh;
     background-size: 6%;
+  }
+
+  .dream {
+    background-position: 20vw 35vh;
+    background-size: 30vw;
   }
 }

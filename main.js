@@ -27,8 +27,6 @@
           'none';
       }
     },
-    study(type) {},
-    yoga(type) {},
   };
 
   const graphicElems = document.querySelectorAll('.graphic-item');
