@@ -34,9 +34,19 @@ header {
   text-align: center;
   padding: 0 30px;
 }
+header h1,
+p {
+  opacity: 0;
+  animation: show 1s forwards;
+}
+header h1 {
+  transform: translateY(30px);
+}
 header p {
   max-width: 70vw;
   margin: 0 auto;
+  transform: translateY(20px);
+  animation-delay: 0.5s;
 }
 .global-width {
   max-width: 620px;
@@ -75,9 +85,11 @@ header p {
   width: 100%;
   height: 5px;
   z-index: 5;
+  background-color: transparent;
 }
 .progress-bar {
   display: block;
+  width: 0%;
   background-image: linear-gradient(90deg, #f79c92, #fa7465);
   height: 100%;
 }
@@ -122,6 +134,54 @@ header p {
   margin-bottom: 60vh;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
 }
+.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icons div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center / 5vw;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.icons .icon-00 {
+  background-image: url(./images/00-00.png);
+  top: 5%;
+  left: -20%;
+}
+.icons .icon-01 {
+  background-image: url(./images/00-01.png);
+  top: -10%;
+  left: -16%;
+}
+.icons .icon-02 {
+  background-image: url(./images/00-02.png);
+  background-size: 3vw;
+  top: -15%;
+  left: -10%;
+}
+.icons .icon-03 {
+  background-image: url(./images/00-03.png);
+  background-size: 4vw;
+  top: -15%;
+  left: 10%;
+}
+.icons .icon-04 {
+  background-image: url(./images/00-04.png);
+  top: -10%;
+  left: 16%;
+}
+.icons .icon-05 {
+  background-image: url(./images/00-05.png);
+  top: 5%;
+  left: 20%;
+}
+
 .tree {
   position: absolute;
   top: 0;
@@ -142,10 +202,20 @@ header p {
 .dog {
   position: absolute;
   top: 55%;
-  right: 50%;
+  right: 55%;
   width: 150px;
-  transition: all 1s 0.2s linear;
+  transition: all 1.5s linear;
 }
+
+.steam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/04-00.png) no-repeat center;
+}
+
 [data-action='study'] .motion {
   position: absolute;
   top: 0;
@@ -180,6 +250,16 @@ header p {
   background: url('./images/08-00.png') 33vw 34vh / 5% no-repeat;
   animation: ani-step 0.5s linear alternate infinite;
 }
+
+.dream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/09-00.png) no-repeat 35vw 10vh;
+}
+
 footer {
   padding: 3rem;
   text-align: center;
@@ -194,6 +274,15 @@ footer a {
 }
 
 /* 애니메이션 */
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes ani-step {
   from {
     visibility: hidden;

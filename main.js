@@ -1,5 +1,19 @@
 (() => {
   const actions = {
+    icons(type) {
+      const iconElems = document.querySelectorAll('.icons div');
+      if (type) {
+        for (let i = 0; i < iconElems.length; i++) {
+          iconElems[i].style.animation = `show 1.5s ${
+            i * 0.3
+          }s alternate infinite`;
+        }
+      } else {
+        for (let i = 0; i < iconElems.length; i++) {
+          iconElems[i].style.animation = 'none';
+        }
+      }
+    },
     dog(type) {
       if (type) {
         document.querySelector('.dog').style.transform = `translateX(${
