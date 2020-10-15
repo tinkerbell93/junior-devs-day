@@ -21,6 +21,11 @@
   const stepElems = document.querySelectorAll('.step');
   let curGraphic = graphicElems[0];
   let ioIndex;
+  const scrollBtn = document.querySelector('.scroll-btn button');
+
+  scrollBtn.addEventListener('click', () => {
+    scrollTo(0, innerHeight);
+  });
 
   // IntersectionObserver
   const io = new IntersectionObserver((entries, observe) => {
