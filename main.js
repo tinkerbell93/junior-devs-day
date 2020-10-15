@@ -1,5 +1,19 @@
 (() => {
   const actions = {
+    icons(type) {
+      const iconElems = document.querySelectorAll('.icons div');
+      if (type) {
+        for (let i = 0; i < iconElems.length; i++) {
+          iconElems[i].style.animation = `show 1.5s ${
+            i * 0.3
+          }s alternate infinite`;
+        }
+      } else {
+        for (let i = 0; i < iconElems.length; i++) {
+          iconElems[i].style.animation = 'none';
+        }
+      }
+    },
     dog(type) {
       if (type) {
         document.querySelector('.dog').style.transform = `translateX(${
@@ -13,15 +27,35 @@
           'none';
       }
     },
-    morning(type) {},
-    night(type) {},
-    yoga(type) {},
   };
 
   const graphicElems = document.querySelectorAll('.graphic-item');
   const stepElems = document.querySelectorAll('.step');
   let curGraphic = graphicElems[0];
   let ioIndex;
+
+  const progressBar = document.querySelector('.progress-bar');
+
+  const scrollBtn = document.querySelector('.scroll-btn button');
+
+  // 프로그레스 바
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const documentHight = document.body.offsetHeight;
+    const windowHight = window.outerHeight;
+    const per = Math.ceil((scrollTop / (documentHight - windowHight)) * 100);
+
+    progressBar.style.width = `${per}%`;
+  });
+
+  // 스크롤 버튼
+  scrollBtn.addEventListener('click', () => {
+    scrollTo({
+      top: innerHeight,
+      left: 0,
+      behavior: 'smooth',
+    });
+  });
 
   // IntersectionObserver
   const io = new IntersectionObserver((entries, observe) => {

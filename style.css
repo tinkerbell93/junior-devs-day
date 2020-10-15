@@ -5,6 +5,7 @@ body {
   margin: 0;
   background-color: ivory;
   overflow-x: hidden;
+  color: #333;
 }
 div,
 section,
@@ -17,22 +18,84 @@ h2 {
   word-break: keep-all;
 }
 a {
-  color: royalblue;
+  color: inherit;
 }
 img {
   max-width: 100%;
   height: auto;
 }
-
 h1 {
   text-align: center;
 }
-
+header {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 30px;
+}
+header h1,
+p {
+  opacity: 0;
+  animation: show 1s forwards;
+}
+header h1 {
+  transform: translateY(30px);
+}
+header p {
+  max-width: 70vw;
+  margin: 0 auto;
+  transform: translateY(20px);
+  animation-delay: 0.5s;
+}
 .global-width {
   max-width: 620px;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* 스크롤 버튼 */
+.scroll-btn {
+  margin: 0 auto;
+  height: 20vh;
+  text-align: center;
+}
+.scroll-btn button {
+  cursor: pointer;
+
+  height: 35px;
+  width: 22px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid #333;
+}
+.mouse-in {
+  height: 6px;
+  width: 2px;
+  display: block;
+  background: #333;
+  transform: translate(2px, -5px);
+  animation: mouse-in 1s infinite;
+}
+
+/* 프로그레스 바 */
+.progress {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 5;
+  background-color: transparent;
+}
+.progress-bar {
+  display: block;
+  width: 0%;
+  background-image: linear-gradient(90deg, #f79c92, #fa7465);
+  height: 100%;
+}
+
+/* 스크롤 콘텐츠 */
 .scroll-graphic {
   position: sticky;
   top: 0;
@@ -72,6 +135,54 @@ h1 {
   margin-bottom: 60vh;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
 }
+.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icons div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center / 5vw;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.icons .icon-00 {
+  background-image: url(./images/00-00.png);
+  top: 5%;
+  left: -20%;
+}
+.icons .icon-01 {
+  background-image: url(./images/00-01.png);
+  top: -10%;
+  left: -16%;
+}
+.icons .icon-02 {
+  background-image: url(./images/00-02.png);
+  background-size: 3vw;
+  top: -15%;
+  left: -10%;
+}
+.icons .icon-03 {
+  background-image: url(./images/00-03.png);
+  background-size: 4vw;
+  top: -15%;
+  left: 10%;
+}
+.icons .icon-04 {
+  background-image: url(./images/00-04.png);
+  top: -10%;
+  left: 16%;
+}
+.icons .icon-05 {
+  background-image: url(./images/00-05.png);
+  top: 5%;
+  left: 20%;
+}
+
 .tree {
   position: absolute;
   top: 0;
@@ -83,51 +194,73 @@ h1 {
 }
 [data-action='dog'] .motion {
   position: absolute;
-  top: -15%;
-  left: 5%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url(./images/02-01.PNG) no-repeat center;
-  opacity: 0;
-  background-size: 3rem;
+  background: url(./images/02-01.png) no-repeat 53vw 30vh / 3vw;
 }
 .dog {
   position: absolute;
   top: 55%;
-  right: 50%;
+  right: 55%;
   width: 150px;
-  transition: all 1s 0.2s linear;
+  transition: all 1.5s linear;
 }
-[data-action='morning'] .motion {
+
+.steam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/04-00.png) no-repeat center;
+}
+
+.study .motion {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  opacity: 0;
-  background: url('./images/06-00.PNG') 30vw 29vh / 5% no-repeat;
+}
+.study .motion span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 30vw 29vh no-repeat;
+}
+.study .motion .motion-00 {
+  background-image: url(./images/06-00.png);
+  background-size: 5vw;
   animation: ani-step 0.5s linear alternate infinite;
 }
-[data-action='night'] .motion {
+.study .motion .motion-01 {
+  background-image: url(./images/06-01.png);
+  background-size: 6vw;
+  animation: ani-step 0.5s 0.5s linear alternate infinite;
+}
+
+.yoga .motion {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  opacity: 0;
-  background: url('./images/06-01.PNG') 30vw 29vh / 6% no-repeat;
+  visibility: hidden;
+  background: url('./images/08-00.png') 33vw 34vh / 5% no-repeat;
   animation: ani-step 0.5s linear alternate infinite;
 }
-[data-action='yoga'] .motion {
+
+.dream {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  opacity: 0;
-  background: url('./images/08-00.PNG') 35vw 34vh / 5% no-repeat;
-  animation: ani-step 0.5s linear alternate infinite;
+  height: 100%;
+  background: url(./images/09-00.png) no-repeat 35vw 10vh;
 }
+
 footer {
   padding: 3rem;
   text-align: center;
@@ -137,19 +270,153 @@ footer a {
   text-decoration: none;
   color: #333;
 }
-@keyframes ani-step {
+.github {
+  width: 26px;
+}
+
+/* 애니메이션 */
+@keyframes show {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ani-step {
+  from {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
   }
 }
 @keyframes ani-step02 {
   0% {
-    background-image: url(./images/06-00.PNG);
+    background-image: url(./images/06-00.png);
   }
   100% {
-    background-image: url(./images/06-01.PNG);
+    background-image: url(./images/06-01.png);
+  }
+}
+@keyframes mouse-in {
+  from {
+    transform: translate(2px, -5px);
+    opacity: 1;
+  }
+  to {
+    transform: translate(2px, 3px);
+    opacity: 0;
+  }
+}
+
+/* 반응형 */
+/* 테블릿 (해상도 768px ~ 1024px)*/
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  [data-action='dog'] .motion {
+    background: url(./images/02-01.png) no-repeat 53vw 40vh / 3vw;
+  }
+  .icons div {
+    background-size: 7vw;
+  }
+  .icons .icon-00 {
+    top: 0%;
+    left: -30%;
+  }
+  .icons .icon-01 {
+    top: -5%;
+    left: -22%;
+  }
+  .icons .icon-02 {
+    background-size: 3vw;
+    top: -10%;
+    left: -15%;
+    background-size: 5vw;
+  }
+  .icons .icon-03 {
+    background-size: 4vw;
+    top: -10%;
+    left: 15%;
+    background-size: 5vw;
+  }
+  .icons .icon-04 {
+    top: -5%;
+    left: 22%;
+  }
+  .icons .icon-05 {
+    top: 0%;
+    left: 30%;
+  }
+  .study .motion span {
+    background: 25vw 40vh no-repeat;
+  }
+  .yoga .motion {
+    background-position: 30vw 45vh;
+    background-size: 5%;
+  }
+  .dream {
+    background-position: 10vw 25vh;
+  }
+}
+
+/* 모바일 (해상도 375px ~ 767px)*/
+@media all and (min-width: 375px) and (max-width: 767px) {
+  [data-action='dog'] .motion {
+    background: url(./images/02-01.png) no-repeat 53vw 44vh / 4vw;
+  }
+  .dog {
+    width: 50px;
+  }
+  .study .motion span {
+    background: 25vw 43vh no-repeat;
+  }
+  .icons div {
+    background-size: 8vw;
+  }
+  .icons .icon-00 {
+    top: 0%;
+    left: -30%;
+  }
+  .icons .icon-01 {
+    top: -3%;
+    left: -22%;
+  }
+  .icons .icon-02 {
+    background-size: 3vw;
+    top: -5%;
+    left: -15%;
+    background-size: 6vw;
+  }
+  .icons .icon-03 {
+    background-size: 4vw;
+    top: -5%;
+    left: 15%;
+    background-size: 6vw;
+  }
+  .icons .icon-04 {
+    top: -3%;
+    left: 22%;
+  }
+  .icons .icon-05 {
+    top: 0%;
+    left: 30%;
+  }
+
+  .steam {
+    background-size: 30vw;
+  }
+
+  .yoga .motion {
+    background-position: 30vw 46vh;
+    background-size: 6%;
+  }
+
+  .dream {
+    background-position: 20vw 35vh;
+    background-size: 30vw;
   }
 }
