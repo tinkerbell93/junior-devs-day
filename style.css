@@ -1,6 +1,5 @@
 html {
   font-family: 'Noto Sans KR', sans-serif;
-  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -171,6 +170,9 @@ footer a {
   display: inline-block;
   text-decoration: none;
   color: #333;
+}
+.github {
+  width: 26px;
 }
 
 /* 애니메이션 */

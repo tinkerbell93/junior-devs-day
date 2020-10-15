@@ -24,7 +24,11 @@
   const scrollBtn = document.querySelector('.scroll-btn button');
 
   scrollBtn.addEventListener('click', () => {
-    scrollTo(0, innerHeight);
+    scrollTo({
+      top: innerHeight,
+      left: 0,
+      behavior: 'smooth',
+    });
   });
 
   // IntersectionObserver
