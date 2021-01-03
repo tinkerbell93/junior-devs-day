@@ -54,6 +54,14 @@ header p {
   margin: 0 auto;
   padding: 0 1rem;
 }
+.a11y-hidden {
+  background-color: blue;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
 
 /* 스크롤 버튼 */
 .scroll-btn {
