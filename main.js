@@ -4,9 +4,8 @@
       const iconElems = document.querySelectorAll('.icons div');
       if (type) {
         for (let i = 0; i < iconElems.length; i++) {
-          iconElems[i].style.animation = `show 1.5s ${
-            i * 0.3
-          }s alternate infinite`;
+          iconElems[i].style.animation = `show 1.5s ${i * 0.3
+            }s alternate infinite`;
         }
       } else {
         for (let i = 0; i < iconElems.length; i++) {
@@ -16,9 +15,8 @@
     },
     dog(type) {
       if (type) {
-        document.querySelector('.dog').style.transform = `translateX(${
-          window.innerWidth * 0.7
-        }px)`;
+        document.querySelector('.dog').style.transform = `translateX(${window.innerWidth * 0.7
+          }px)`;
         document.querySelector('[data-action="dog"] .motion').style.animation =
           'ani-step 0.5s 0.5s infinite';
       } else {
@@ -61,6 +59,7 @@
   const io = new IntersectionObserver((entries, observe) => {
     // 현재 보이는 target을 확인
     ioIndex = entries[0].target.dataset.index * 1;
+    console.log(entries, ioIndex);
   });
 
   // dataset으로 data-*** 속성 넣기
