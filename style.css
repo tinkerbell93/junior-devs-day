@@ -120,6 +120,7 @@ header p {
   height: 100%;
   opacity: 0;
   transition: all 0.3s;
+  overflow-y: hidden;
 }
 .visible {
   opacity: 1;
@@ -373,6 +374,7 @@ footer a {
 
 /* 모바일 (해상도 375px ~ 767px)*/
 @media all and (min-width: 375px) and (max-width: 767px) {
+
   [data-action='dog'] .motion {
     background: url(./images/02-01.png) no-repeat 53vw 44vh / 4vw;
   }
