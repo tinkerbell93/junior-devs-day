@@ -59,7 +59,6 @@
   const io = new IntersectionObserver((entries, observe) => {
     // 현재 보이는 target을 확인
     ioIndex = entries[0].target.dataset.index * 1;
-    console.log(entries, ioIndex);
   });
 
   // dataset으로 data-*** 속성 넣기
