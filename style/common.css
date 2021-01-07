@@ -1,0 +1,64 @@
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  margin: 0;
+  background-color: ivory;
+  overflow-x: hidden;
+  color: #333;
+}
+div,
+section,
+header,
+footer,
+p,
+h1,
+h2 {
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+a {
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+h1 {
+  text-align: center;
+}
+header {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 30px;
+}
+header h1,
+p {
+  opacity: 0;
+  animation: show 1s forwards;
+}
+header h1 {
+  transform: translateY(30px);
+}
+header p {
+  max-width: 70vw;
+  margin: 0 auto;
+  transform: translateY(20px);
+  animation-delay: 0.5s;
+}
+.global-width {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.a11y-hidden {
+  background-color: blue;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
