@@ -1,68 +1,3 @@
-html {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-body {
-  margin: 0;
-  background-color: ivory;
-  overflow-x: hidden;
-  color: #333;
-}
-div,
-section,
-header,
-footer,
-p,
-h1,
-h2 {
-  box-sizing: border-box;
-  word-break: keep-all;
-}
-a {
-  color: inherit;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
-h1 {
-  text-align: center;
-}
-header {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 0 30px;
-}
-header h1,
-p {
-  opacity: 0;
-  animation: show 1s forwards;
-}
-header h1 {
-  transform: translateY(30px);
-}
-header p {
-  max-width: 70vw;
-  margin: 0 auto;
-  transform: translateY(20px);
-  animation-delay: 0.5s;
-}
-.global-width {
-  max-width: 620px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.a11y-hidden {
-  background-color: blue;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: polygon(0 0, 0 0, 0 0);
-}
-
 /* 스크롤 버튼 */
 .scroll-btn {
   margin: 0 auto;
@@ -120,7 +55,7 @@ header p {
   height: 100%;
   opacity: 0;
   transition: all 0.3s;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .visible {
   opacity: 1;
@@ -160,34 +95,34 @@ header p {
   opacity: 0;
 }
 .icons .icon-00 {
-  background-image: url(./images/00-00.png);
+  background-image: url(../images/00-00.png);
   top: 5%;
   left: -20%;
 }
 .icons .icon-01 {
-  background-image: url(./images/00-01.png);
+  background-image: url(../images/00-01.png);
   top: -10%;
   left: -16%;
 }
 .icons .icon-02 {
-  background-image: url(./images/00-02.png);
+  background-image: url(../images/00-02.png);
   background-size: 3vw;
   top: -15%;
   left: -10%;
 }
 .icons .icon-03 {
-  background-image: url(./images/00-03.png);
+  background-image: url(../images/00-03.png);
   background-size: 4vw;
   top: -15%;
   left: 10%;
 }
 .icons .icon-04 {
-  background-image: url(./images/00-04.png);
+  background-image: url(../images/00-04.png);
   top: -10%;
   left: 16%;
 }
 .icons .icon-05 {
-  background-image: url(./images/00-05.png);
+  background-image: url(../images/00-05.png);
   top: 5%;
   left: 20%;
 }
@@ -198,7 +133,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(./images/03.png) center no-repeat;
+  background: url(../images/03.png) center no-repeat;
   background-size: contain;
 }
 [data-action='dog'] .motion {
@@ -207,7 +142,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(./images/02-01.png) no-repeat 53vw 30vh / 3vw;
+  background: url(../images/02-01.png) no-repeat 53vw 30vh / 3vw;
 }
 .dog {
   position: absolute;
@@ -223,7 +158,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(./images/04-00.png) no-repeat center;
+  background: url(../images/04-00.png) no-repeat center;
 }
 
 .study .motion {
@@ -240,12 +175,12 @@ header p {
   background: 30vw 29vh no-repeat;
 }
 .study .motion .motion-00 {
-  background-image: url(./images/06-00.png);
+  background-image: url(../images/06-00.png);
   background-size: 5vw;
   animation: ani-step 0.5s linear alternate infinite;
 }
 .study .motion .motion-01 {
-  background-image: url(./images/06-01.png);
+  background-image: url(../images/06-01.png);
   background-size: 6vw;
   animation: ani-step 0.5s 0.5s linear alternate infinite;
 }
@@ -257,7 +192,7 @@ header p {
   width: 100%;
   height: 100vh;
   visibility: hidden;
-  background: url('./images/08-00.png') 33vw 34vh / 5% no-repeat;
+  background: url('../images/08-00.png') 33vw 34vh / 5% no-repeat;
   animation: ani-step 0.5s linear alternate infinite;
 }
 
@@ -267,7 +202,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(./images/09-00.png) no-repeat 35vw 10vh;
+  background: url(../images/09-00.png) no-repeat 35vw 10vh;
 }
 
 footer {
@@ -306,10 +241,10 @@ footer a {
 }
 @keyframes ani-step02 {
   0% {
-    background-image: url(./images/06-00.png);
+    background-image: url(../images/06-00.png);
   }
   100% {
-    background-image: url(./images/06-01.png);
+    background-image: url(../images/06-01.png);
   }
 }
 @keyframes mouse-in {
@@ -327,7 +262,7 @@ footer a {
 /* 테블릿 (해상도 768px ~ 1024px)*/
 @media all and (min-width: 768px) and (max-width: 1024px) {
   [data-action='dog'] .motion {
-    background: url(./images/02-01.png) no-repeat 53vw 40vh / 3vw;
+    background: url(../images/02-01.png) no-repeat 53vw 40vh / 3vw;
   }
   .icons div {
     background-size: 7vw;
@@ -376,7 +311,7 @@ footer a {
 @media all and (min-width: 375px) and (max-width: 767px) {
 
   [data-action='dog'] .motion {
-    background: url(./images/02-01.png) no-repeat 53vw 44vh / 4vw;
+    background: url(../images/02-01.png) no-repeat 53vw 44vh / 4vw;
   }
   .dog {
     width: 50px;
